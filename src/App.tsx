@@ -9,7 +9,6 @@ function App() {
       }}
     >
       <GridItem area="nav">
-        s
         <NavBar />
       </GridItem>
       <Show above="lg">
