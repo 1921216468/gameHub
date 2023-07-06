@@ -4,14 +4,15 @@ import usePlatforms from "../hooks/usePlatforms";
 import { Platform } from "../hooks/useGames";
 interface Props {
   onSelectPlatform: (platform: Platform) => void;
+  selectPlatform: Platform | null;
 }
-const PlatformSelector = ({ onSelectPlatform }: Props) => {
+const PlatformSelector = ({ onSelectPlatform, selectPlatform }: Props) => {
   const { data, error } = usePlatforms();
   if (error) return null;
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        Platforms
+        {selectPlatform?.name || "Platform"}
       </MenuButton>
       <MenuList>
         {data.map((platform) => (
